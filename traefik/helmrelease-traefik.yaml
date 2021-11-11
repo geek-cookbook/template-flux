@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: traefik
+spec:
+  chart:
+    spec:
+      chart: traefik
+      version: 4.x
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+        namespace: flux-system
+  interval: 15m
+  timeout: 5m
+  releaseName: traefik
+  valuesFrom:
+  - kind: ConfigMap
+    name: traefik-helm-chart-value-overrides
+    valuesKey: values.yaml # This is the default, but best to be explicit for clarity
