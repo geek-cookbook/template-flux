@@ -21,8 +21,8 @@ data:
 
     ui:
       color: "#34577c"
-      message: "Greetings, geek!"
-      logo: ""
+      message: "👋 Greetings, fellow geek!"
+      logo: "https://geek-cookbook.funkypenguin.co.nz/images/site-logo.svg"
 
     # failure conditions
     faults:
